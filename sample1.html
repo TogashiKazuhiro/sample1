@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset = "utf-8">
+    <script>
+      var data = [1,8,5,7,2,6,7,4,0];
+
+      function push(){
+        var v = Math.floor(Math.random()*10);
+        var r = data.push(v);
+        update(r);
+      }
+      function pop(){
+        var r = data.pop();
+        update(r);
+      }
+      function shift(){
+        var r = data.shift();
+        update(r);
+      }
+      function splice(){
+        var r = data.splice(3,2);
+        update(r);
+      }
+      function update(rval){
+        document.getElementById("data").textContent = data;
+        document.getElementById("length").textContent = data.length;
+        document.getElementById("rval").textContent = rval;
+        var v0 = data.indexOf(7);
+        var v1 = data.lasIndexOf(7);
+        document.getElementById("i0").textContent = v0;
+        document.getElementById("i1").textContent = v1;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick = "push()">push()</button>
+    <button onclick = "pop()">pop()</button>
+    <button onclick = "shift()">shift()</button>
+    <button onclick = "splice()">splice()</button>
+
+    <ul style = "font-size:20px;">
+      <li>配列データ:<span id = "data"></span></li>
+      <li>lengthプロパティ:<span id = "length"></span></li>
+      <li>戻り値</li><span id = "rval"></span></li>
+    </ul>
+  </body>
+</html>
